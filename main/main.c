@@ -163,7 +163,7 @@ void echo_task(){
 void trigger_task(){
     while(true){
         gpio_put(TRIGGER_PIN,1);
-        vTaskDelay(10);
+        vTaskDelay(50);
         gpio_put(TRIGGER_PIN,0);
         xSemaphoreGive(xSemaphore_r);
 
