@@ -37,7 +37,7 @@ void ECHO_PIN_callback(uint gpio, uint32_t events) {
         fall_time = get_absolute_time();
         
         uint32_t delta_t = absolute_time_diff_us(rise_time, fall_time);
-        xQueueSend(xQueueButId, &delta_t,0);
+        xQueueSendFromISR(xQueueButId, &delta_t,0);
         
     }
     if (events == 0x8) { // rise edge
