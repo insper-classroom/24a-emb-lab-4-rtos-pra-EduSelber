@@ -150,7 +150,7 @@ void oled1_demo_2(void *p) {
 }
 void echo_task(){
     uint32_t delta_t;
-    int t;
+    
     while(true){
         if(xQueueReceive(xQueueButId, &delta_t, 0)){
             float distancia =(delta_t / 10000.0) * 340.0 / 2.0;
