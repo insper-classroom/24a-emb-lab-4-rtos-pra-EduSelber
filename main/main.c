@@ -30,9 +30,9 @@ const int ECHO_PIN = 17;
 
 void ECHO_PIN_callback(uint gpio, uint32_t events) {
     static BaseType_t xHigherPriorityTaskWoken;
-    absolute_time_t rise_time;
-    absolute_time_t fall_time;
     static absolute_time_t rise_time;
+    static absolute_time_t fall_time;
+    
     if (events == 0x4) { // fall edge
         fall_time = get_absolute_time();
         
